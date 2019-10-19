@@ -78,6 +78,22 @@ class ResultTest {
         assertFalse(Err.of("sadface").isOk());
     }
 
+    @ParameterizedTest
+    @MethodSource("resultDataTypes")
+    void contains_OkMatchingValues_ErrAlwaysFalse(final Object value) {
+        assertTrue(Ok.of(value).contains(value));
+        assertFalse(Err.of(value).contains(value));
+        assertFalse(Ok.<Object, Object>of("someOtherValue").contains(value));
+    }
+
+    @ParameterizedTest
+    @MethodSource("resultDataTypes")
+    void containsErr_OkAlwaysFalse_ErrMatchingValues(final Object value) {
+        assertFalse(Ok.of(value).containsErr(value));
+        assertTrue(Err.of(value).containsErr(value));
+        assertFalse(Err.<Object, Object>of("someOtherValue").containsErr(value));
+    }
+
     @Test
     void isErr_OkIsFalse_ErrIsTrue() {
         assertFalse(Ok.of(100).isErr());

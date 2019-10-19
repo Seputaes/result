@@ -73,6 +73,22 @@ public final class Ok<T, E> implements Result<T, E> {
      * {@inheritDoc}
      */
     @Override
+    public boolean contains(final T x) {
+        return value.equals(x);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean containsErr(final E f) {
+        return false;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public Optional<T> getOk() {
         return Optional.of(value);
     }

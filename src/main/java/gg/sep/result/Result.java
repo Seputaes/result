@@ -21,6 +21,8 @@
  */
 package gg.sep.result;
 
+import gg.sep.result.annotations.Experimental;
+
 import java.util.Optional;
 import java.util.function.Function;
 
@@ -87,6 +89,7 @@ public interface Result<T, E> extends Iterable<T> {
 
     /**
      * Returns {@code true} if the result is {@link Ok}.
+     *
      * @return {@code true} if the result is {@link Ok}.
      */
     boolean isOk();
@@ -97,6 +100,28 @@ public interface Result<T, E> extends Iterable<T> {
      * @return {@code true} if the result is {@link Err}.
      */
     boolean isErr();
+
+    /**
+     * Returns {@code true} if the result is an {@link Ok} value containing the given value.
+     *
+     * @param x Value to compare against the {@link Ok} value.
+     * @return {@code true} if the result is an {@link Ok} value containing the given value.
+     *
+     * @since 1.1
+     */
+    @Experimental
+    boolean contains(T x);
+
+    /**
+     * Returns {@code true} if the result is an {@link Err} value containing the given value.
+     *
+     * @param f Value to compare against the {@link Err} value.
+     * @return {@code true} if the result is an {@link Err} value containing the given value.
+     *
+     * @since 1.1
+     */
+    @Experimental
+    boolean containsErr(E f);
 
     /**
      * Converts from {@code Result<T, E>} to {@link Optional}&lt;T&gt;.
@@ -149,7 +174,7 @@ public interface Result<T, E> extends Iterable<T> {
     /**
      * Unwraps a result, yielding the content of an {@link Ok}. If the value is an {@link Err},
      * then it calls {@code op} with its value.
-     *
+
      * @param op The function to call on the value of {@link Err} if {@code this} is an {@link Err}.
      * @return The content of an {@link Ok}. If the value is an {@link Err},
      *         then it returns the result of {@code} called on the value of that {@link Err}.
@@ -237,6 +262,7 @@ public interface Result<T, E> extends Iterable<T> {
      * @return Returns a {@code U} by applying a function to a contained {@link Ok} value, or a fallback
      *         function applied to a contained {@link Err} value.
      */
+    @Experimental
     <U> U mapOrElse(Function<E, U> fallback, Function<T, U> op);
 
     /**

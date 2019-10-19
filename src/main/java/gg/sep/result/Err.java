@@ -73,6 +73,22 @@ public final class Err<T, E> implements Result<T, E> {
      * {@inheritDoc}
      */
     @Override
+    public boolean contains(final T x) {
+        return false;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean containsErr(final E f) {
+        return error.equals(f);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public Optional<T> getOk() {
         return Optional.empty();
     }
