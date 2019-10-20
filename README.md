@@ -2,9 +2,11 @@
 
 [![Build Status](https://travis-ci.org/Seputaes/result.svg?branch=master)](https://travis-ci.org/Seputaes/result)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
-[![made-with-java](https://img.shields.io/badge/Made%20with-Java-1f425f.svg)](https://en.wikipedia.org/wiki/Java_(programming_language))
+[![made-with-java](https://img.shields.io/badge/Made%20with-Java-1f425f.svg)](https://en.wikipedia.org/wiki/Java_(programming_language)
 [![GitHub issues](https://img.shields.io/github/issues/Seputaes/result.svg)](https://GitHub.com/seputaes/result/issues/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+[![Discord](https://img.shields.io/discord/481539443170344961?logo=discord&label=Discord)](https://sep.gg/discord)
+
 
 A Java implementation of rustlang's 
 [std::result::Result](https://doc.rust-lang.org/std/result/enum.Result.html) 
