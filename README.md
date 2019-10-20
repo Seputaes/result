@@ -35,8 +35,7 @@ handling, Result provides a cleaner and functional-interface method of
 **doing something** with the error value as opposed to just throwing it 
 verbatim.
 
-An example of how this might look in practice might might
-be along the lines of:
+An example of how this might look in practice wouldbe along the lines of:
 
 ```java
 public Result<Config, String> loadConfig(final File configFile) {
