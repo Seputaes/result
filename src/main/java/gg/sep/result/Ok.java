@@ -186,6 +186,14 @@ public final class Ok<T, E> implements Result<T, E> {
      * {@inheritDoc}
      */
     @Override
+    public <U> U mapOr(final U defaultValue, final Function<T, U> op) {
+        return op.apply(value);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public <U> U mapOrElse(final Function<E, U> fallback, final Function<T, U> map) {
         return map.apply(value);
     }

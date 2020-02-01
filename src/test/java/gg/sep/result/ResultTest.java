@@ -219,6 +219,15 @@ class ResultTest {
     }
 
     @Test
+    void mapOr_OkAppliesFunction_ErrReturnsDefault() {
+        final Result<String, ?> ok = Ok.of("foo");
+        assertEquals(3, ok.mapOr(42, String::length));
+
+        final Result<String, ?> err = Err.of("error");
+        assertEquals(42, err.mapOr(42, String::length));
+    }
+
+    @Test
     void mapOrElse_AppliesRespectiveFunctions() {
         final Function<Integer, Integer> addThree = i -> i + 3;
         final Function<Integer, Integer> multiplyBySelf = i -> i * i;

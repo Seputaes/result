@@ -186,6 +186,14 @@ public final class Err<T, E> implements Result<T, E> {
      * {@inheritDoc}
      */
     @Override
+    public <U> U mapOr(final U defaultValue, final Function<T, U> op) {
+        return defaultValue;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public <U> U mapOrElse(final Function<E, U> fallback, final Function<T, U> op) {
         return fallback.apply(error);
     }

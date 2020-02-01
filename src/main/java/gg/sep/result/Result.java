@@ -251,6 +251,19 @@ public interface Result<T, E> extends Iterable<T> {
     <F> Result<T, F> mapErr(Function<E, F> op);
 
     /**
+     * Applies a function to the contained value (if any), or returns the provided default (if not).
+     *
+     * @param defaultValue The default value to return if this is an {@link Err}.
+     * @param op The function to apply to {@link Ok} if {@code this} is an {@link Ok}.
+     * @param <U> The return type of the {@code op} method or type of the default value.
+     * @return Returns a {@code U} by applying a function to the contained {@link Ok} value, or returns
+     * the provided default if {@code this} is an {@link Err}.
+     *
+     * @since 1.2
+     */
+    <U> U mapOr(U defaultValue, Function<T, U> op);
+
+    /**
      * Maps a {@code Result<T, E>} to {@code U} by applying a function to a contained {@link Ok} value,
      * or a fallback function applied to a contained {@link Err} value.
      *
@@ -262,7 +275,6 @@ public interface Result<T, E> extends Iterable<T> {
      * @return Returns a {@code U} by applying a function to a contained {@link Ok} value, or a fallback
      *         function applied to a contained {@link Err} value.
      */
-    @Experimental
     <U> U mapOrElse(Function<E, U> fallback, Function<T, U> op);
 
     /**
