@@ -1,12 +1,12 @@
-# std::result::Result - For Java | [![Rust Version](https://img.shields.io/badge/rust-1.38.0-b7410e)](https://doc.rust-lang.org/1.38.0/std/result/)
+# std::result::Result - For Java 
 
-[![Build Status](https://travis-ci.org/Seputaes/result.svg?branch=master)](https://travis-ci.org/Seputaes/result)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com)
+
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
-[![made-with-java](https://img.shields.io/badge/Made%20with-Java-1f425f.svg)](https://en.wikipedia.org/wiki/Java_(programming_language)
+[![Build Status](https://travis-ci.org/Seputaes/result.svg?branch=master)](https://travis-ci.org/Seputaes/result)
 [![GitHub issues](https://img.shields.io/github/issues/Seputaes/result.svg)](https://GitHub.com/seputaes/result/issues/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![Discord](https://img.shields.io/discord/481539443170344961?logo=discord&label=Discord)](https://sep.gg/discord)
-
 
 A Java implementation of rustlang's 
 [std::result::Result](https://doc.rust-lang.org/std/result/enum.Result.html) 
@@ -32,7 +32,7 @@ To quote Rust's
 
 In Java, this can be useful as a means of propagating errors back up the call
 layers--for example, to display an error message to a user--without needing
-to throw an exception. While similar things can be accomplished via exception
+to bubble up exceptions. While similar things can be accomplished via exception
 handling, Result provides a cleaner and functional-interface method of 
 **doing something** with the error value as opposed to just throwing it 
 verbatim.
@@ -76,14 +76,14 @@ final Config config = configLoader.loadConfig(file).unwrapOrElse(errorMsg -> {
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![GitHub issues](https://img.shields.io/github/issues/Seputaes/result.svg)](https://GitHub.com/seputaes/result/issues/)
-[![Rust Version](https://img.shields.io/badge/rust-1.38.0-b7410e)](https://doc.rust-lang.org/1.38.0/std/result/)
+[![Rust Version](https://img.shields.io/badge/rust-1.41.0-b7410e)](https://doc.rust-lang.org/1.41.0/std/result/)
 
 This library attempts to maintain as much feature parity with Rust's 
 implementation as possible. As is obvious, due to the significant differences
 in style between the two languages, some things don't make sense to implement
 in Java, or should be implemented differently.
 
-Currently, this library tracks **v1.38.0** of Rust's implementation.
+Currently, this library tracks **v1.41.0** of Rust's implementation.
 
 Certain features of `Result` are nightly-only in Rust's implementation. These
 are marked accordingly with an `Experiemntal` annotation in this library, and
